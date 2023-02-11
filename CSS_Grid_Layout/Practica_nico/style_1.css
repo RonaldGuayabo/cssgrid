@@ -1,0 +1,120 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: whitesmoke;
+    color: black;
+}
+.contenedor {
+    width: 90%;
+    max-width: 1000px;
+    height: 6px;
+    margin: 20px auto;
+    
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, auto);
+
+    grid-template-areas: "header header header"
+                        "contenido contenido sidebar"
+                        "widget-1 widget-2 sidebar"
+                        "footer footer footer";
+}
+
+.contenedor > div,
+.contenedor .header,
+.contenedor .contenido,
+.contenedor .sidebar,
+.contenedor .footer{
+    background: greenyellow;
+    padding: 20px;
+    border-radius: 4px;
+}
+.contenedor .widget-1,
+.contenedor .widget-2 {
+    height: 100px;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor .header {
+    background: red;
+    color: blue;
+    grid-area: header;
+}
+
+.contenedor .contenido {
+    background: red;
+    color: blue;
+    grid-area: contenido;
+}
+
+.contenedor .sidebar {
+    grid-column: 3 / 4;
+    background-image: url("./vista-vertical-torre-eiffel-paris-francia_1258-3169.jpg");
+    text-align: left;
+    display: flex;
+    align-items: left;
+    justify-content: left;
+    color: blue;
+    min-height: 100px;
+    grid-area: sidebar;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+.contenedor .footer {
+    background: red;
+    color: blue;
+    grid-area: footer;
+}
+
+.contenedor .widget-1 {
+    background: red;
+    color: blue;
+    grid-area: widget-1;
+}
+.contenedor .widget-2 {
+    background: red;
+    color: blue;
+    grid-area: widget-2;
+} 
+
+@media screen and (max-width: 768px){
+    .contenedor {
+        grid-template-areas: "header header header"
+                            "contenido contenido contenido"
+                            "sidebar sidebar sidebar"
+                            "widget-1 widget-1 widget-2"
+                            "footer footer footer";
+    }
+}
+
+.contenedor .header--button {
+    position: absolute;
+    left: calc(50% - 118px);
+    top: 30px;
+    display: block;
+    margin-top: 35px;
+    padding: 15px;
+    width: 229px;
+    height: 48px;
+    background-color: white;
+    /*Sombra*/
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+    border: none;
+    border-radius: 15px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: black;
+}
